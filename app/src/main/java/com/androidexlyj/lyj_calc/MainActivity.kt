@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-
+import android.widget.Toast
 
 
 class MainActivity : AppCompatActivity() {
@@ -23,14 +23,11 @@ class MainActivity : AppCompatActivity() {
     lateinit var lyjBtnMul: Button
     lateinit var lyjBtnMinus: Button
     lateinit var lyjBtnPlus: Button
-    lateinit var lyjBtnPoint: Button
     lateinit var lyjBtnDiv: Button
     lateinit var lyjBtnResult: Button
     lateinit var lyjBtnAC: Button
     lateinit var lyjResult: TextView
     lateinit var lyjPreview: TextView
-    lateinit var lyjNum1: String
-    lateinit var lyjNum2: String
     private var lyjIsOperator = false
     private var lyjHasOperator = false
 
@@ -53,25 +50,12 @@ class MainActivity : AppCompatActivity() {
         lyjBtnMul = findViewById<Button>(R.id.lyjBtnMul);
         lyjBtnMinus = findViewById<Button>(R.id.lyjBtnMinus);
         lyjBtnPlus = findViewById<Button>(R.id.lyjBtnPlus);
-        lyjBtnPoint = findViewById<Button>(R.id.lyjBtnPoint);
         lyjBtnDiv = findViewById<Button>(R.id.lyjBtnDiv);
         lyjBtnResult = findViewById<Button>(R.id.lyjBtnResult);
         lyjBtnAC = findViewById<Button>(R.id.lyjBtnAC);
         lyjResult = findViewById<TextView>(R.id.lyjResult);
         lyjPreview = findViewById<TextView>(R.id.lyjPreview);
-//        lyjBtn0.setOnClickListener {
-//            if (lyjIsOperator) {
-//                lyjPreview.append(" ")
-//            }
-//            lyjIsOperator = false
-//            val lyjPreviewText = lyjPreview.text.split(" ")
-//
-//            if (lyjPreviewText.last().isEmpty() && lyjBtn0.text.toString() == "0") {
-//                lyjResult.text = "0"
-//            }
-//            lyjPreview.append(lyjBtn0.text.toString())
-//            lyjResult.text = calculateFun()
-//        }
+
         lyjBtn0.setOnClickListener {
             buttonClicked(lyjBtn0)
         }
@@ -126,7 +110,7 @@ class MainActivity : AppCompatActivity() {
     }
 
      // 버튼 클릭 함수
-    fun buttonClicked(v : View) {
+     private fun buttonClicked(v : View) {
         when (v.id) {
             R.id.lyjBtn0 -> numBtnClicked("0")
             R.id.lyjBtn1 -> numBtnClicked("1")
@@ -146,7 +130,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     // 연산자 클릭한 경우
-     fun opBtnClicked(op: String) {
+    private fun opBtnClicked(op: String) {
         if (lyjPreview.text.isEmpty()) return
 
         when {
@@ -228,11 +212,13 @@ class MainActivity : AppCompatActivity() {
         lyjHasOperator = false
     }
 
-    fun clearBtnClicked(v: View) {
+    private fun clearBtnClicked(v: View) {
         lyjResult.text = ""
         lyjPreview.text = ""
         lyjIsOperator = false
         lyjHasOperator = false
+        Toast.makeText(this,"값이 초기화되었습니다.", Toast.LENGTH_SHORT).show()
+        return
     }
 
 

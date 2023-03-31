@@ -10,7 +10,7 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:id="@+id/lyjPreview"
         android:text=""
         android:textSize="25dp"
@@ -21,20 +21,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    android:layout_marginTop="250dp"-->
+
+
     <TextView
+        android:id="@+id/lyjResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/lyjResult"
+        android:layout_gravity="right"
+        android:layout_marginBottom="150dp"
+        android:gravity="bottom"
         android:text=""
         android:textSize="40dp"
-        android:layout_gravity="right"
-        android:gravity="bottom"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-<!--    android:layout_marginTop="250dp"-->
-
 
     <GridLayout
         android:layout_width="match_parent"
@@ -42,17 +45,20 @@
         android:orientation="horizontal"
         android:layout_weight="1"
         android:columnCount="4"
-        android:rowCount="5">
+        android:rowCount="4">
 
         <Button
-            android:onClick="resultBtnClicked"
             android:id="@+id/lyjBtn7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:backgroundTint="#454747"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:onClick="resultBtnClicked"
             android:text="7"
-            android:textSize="20dp"/>
+            android:textSize="20dp" />
 
         <Button
             android:onClick="resultBtnClicked"
@@ -62,7 +68,10 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:text="8"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:backgroundTint="#454747"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"/>
         <Button
             android:onClick="resultBtnClicked"
             android:id="@+id/lyjBtn9"
@@ -71,7 +80,10 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:text="9"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:backgroundTint="#454747"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"/>
         <Button
             android:onClick="resultBtnClicked"
             android:id="@+id/lyjBtnMul"
@@ -80,7 +92,10 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:text="*"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:backgroundTint="#FF8C00"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"/>
         <Button
             android:onClick="resultBtnClicked"
             android:id="@+id/lyjBtn4"
@@ -89,7 +104,10 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:text="4"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:backgroundTint="#454747"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"/>
         <Button
             android:onClick="resultBtnClicked"
             android:id="@+id/lyjBtn5"
@@ -98,7 +116,10 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:text="5"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:backgroundTint="#454747"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"/>
         <Button
             android:onClick="resultBtnClicked"
             android:id="@+id/lyjBtn6"
@@ -107,7 +128,10 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:text="6"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:backgroundTint="#454747"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"/>
         <Button
             android:onClick="resultBtnClicked"
             android:id="@+id/lyjBtnMinus"
@@ -116,7 +140,10 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:text="-"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:backgroundTint="#FF8C00"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"/>
         <Button
             android:onClick="resultBtnClicked"
             android:id="@+id/lyjBtn1"
@@ -125,7 +152,10 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:text="1"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:backgroundTint="#454747"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"/>
         <Button
             android:onClick="resultBtnClicked"
             android:id="@+id/lyjBtn2"
@@ -134,7 +164,10 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:text="2"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:backgroundTint="#454747"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"/>
         <Button
             android:onClick="resultBtnClicked"
             android:id="@+id/lyjBtn3"
@@ -143,7 +176,10 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:text="3"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:backgroundTint="#454747"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"/>
         <Button
             android:onClick="resultBtnClicked"
             android:id="@+id/lyjBtnPlus"
@@ -152,7 +188,22 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:text="+"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:backgroundTint="#FF8C00"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"/>
+        <Button
+            android:onClick="resultBtnClicked"
+            android:id="@+id/lyjBtnAC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:text="AC"
+            android:textSize="20dp"
+            android:backgroundTint="#C50219"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"/>
         <Button
             android:onClick="resultBtnClicked"
             android:id="@+id/lyjBtn0"
@@ -161,16 +212,10 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:text="0"
-            android:textSize="20dp"/>
-        <Button
-            android:onClick="resultBtnClicked"
-            android:id="@+id/lyjBtnPoint"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:text="."
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:backgroundTint="#454747"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"/>
         <Button
             android:onClick="resultBtnClicked"
             android:id="@+id/lyjBtnDiv"
@@ -179,7 +224,10 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:text="/"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:backgroundTint="#FF8C00"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"/>
         <Button
             android:onClick="resultBtnClicked"
             android:id="@+id/lyjBtnResult"
@@ -188,17 +236,11 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:text="="
-            android:textSize="20dp"/>
-        <Button
-            android:onClick="resultBtnClicked"
-            android:id="@+id/lyjBtnAC"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_columnSpan="4"
-            android:text="AC"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:backgroundTint="#FF8C00"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"/>
+
     </GridLayout>
 
 
