@@ -177,9 +177,9 @@ class MainActivity : AppCompatActivity() {
             // 숫자임을 확인하기
             return ""
         }
-        val lyjNum1 = lyjTexts[0].toBigInteger()
+        var lyjNum1 = lyjTexts[0].toBigInteger()
         val lyjOp = lyjTexts[1]
-        val lyjNum2 = lyjTexts[2].toBigInteger()
+        var lyjNum2 = lyjTexts[2].toBigInteger()
 
         return when(lyjOp) {
             "+" -> (lyjNum1 + lyjNum2).toString()
@@ -197,11 +197,13 @@ class MainActivity : AppCompatActivity() {
             return
         }
         // 마지막 값 없는 경우
-        else if (lyjTexts.size != 3 && lyjHasOperator) {
-            return
-        } else if (lyjTexts[0].isNumber().not() || lyjTexts[2].isNumber().not()) {
+        if (lyjTexts.size != 3 && lyjHasOperator) {
             return
         }
+        if (lyjTexts[0].isNumber().not() || lyjTexts[2].isNumber().not()) {
+            return
+        }
+
         val lyjText = lyjPreview.text.toString()
         val lyjResText = calFunc()
 
@@ -227,7 +229,7 @@ class MainActivity : AppCompatActivity() {
 // isNumber 확장 함수 사용
 private fun String.isNumber(): Boolean {
     return try {
-        // 무한대 Int형
+        // 무한대 저장 각능
         this.toBigInteger()
         true
     } catch (e: java.lang.NumberFormatException) {
